@@ -21,7 +21,7 @@
 https://docs.like.co/validator/likecoin-chain-node/setup-a-node
 
 **RPC**
-`RPC 46.138.245.164:26556`
+`RPC 46.138.245.164:26557`
 
 **Peer**
 
