@@ -21,7 +21,7 @@
 https://docs.like.co/validator/likecoin-chain-node/setup-a-node
 
 **RPC**
-`RPC 46.138.245.164:26557`
+`RPC 95.165.89.222:26557`
 
 **Peer**
 
@@ -57,10 +57,10 @@ go version
 
 ```
 wget https://github.com/likecoin/likecoin-chain/releases/download/v3.0.0/likecoin-chain_3.0.0_Linux_x86_64.tar.gz && \
-tar -xvf likecoin-chain_3.0.0_Linux_x86_64.tar.gz && \
+tar -xvf likecoin-chain_3.1.1_Linux_x86_64.tar.gz && \
 chmod +x bin/liked && \
 mv bin/liked /usr/local/bin/ && \
-rm CHANGELOG.md LICENSE README.md likecoin-chain_3.0.0_Linux_x86_64.tar.gz
+rm CHANGELOG.md LICENSE README.md likecoin-chain_3.1.1_Linux_x86_64.tar.gz
 ```
 
 - Init moniker and set chain-id
@@ -82,7 +82,7 @@ curl https://raw.githubusercontent.com/likecoin/mainnet/master/genesis.json > ~/
 
 **Peers**
 ```
-peers="ccb2af8f2d52324a25ef42a3d2b0b9852675d55b@46.138.245.164:26556"
+peers="ccb2af8f2d52324a25ef42a3d2b0b9852675d55b@95.165.89.222:26556"
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.liked/config/config.toml
 ```
 **Minimum gas prices**
@@ -142,9 +142,9 @@ curl https://raw.githubusercontent.com/MaxFoton/Likecoin-mainnet/main/addrbook.j
 ```
 
 ```
-SNAP_RPC=46.138.245.164:26556 && \
+SNAP_RPC=95.165.89.222:26556 && \
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
-BLOCK_HEIGHT=$((LATEST_HEIGHT - 2000)); \
+BLOCK_HEIGHT=$((LATEST_HEIGHT - 1000)); \
 TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash) && \
 echo $LATEST_HEIGHT $BLOCK_HEIGHT $TRUST_HASH
 ```
@@ -169,7 +169,7 @@ sudo systemctl restart liked && journalctl -fu liked -o cat
 
 ```
 pruning="custom" && \
-pruning_keep_recent="100" && \
+pruning_keep_recent="1000" && \
 pruning_keep_every="0" && \
 pruning_interval="10" && \
 sed -i -e "s/^pruning *=.*/pruning = \"$pruning\"/" $HOME/.liked/config/app.toml && \
