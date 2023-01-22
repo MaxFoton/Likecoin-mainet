@@ -25,7 +25,7 @@ https://docs.like.co/validator/likecoin-chain-node/setup-a-node
 
 **Peer**
 
-- `Peer` ccb2af8f2d52324a25ef42a3d2b0b9852675d55b@46.138.245.164:26556
+- `Peer` ccb2af8f2d52324a25ef42a3d2b0b9852675d55b@95.165.89.222:26556
 
 Genesis and addrbook
 
@@ -56,7 +56,7 @@ go version
 - Download and install the current mainnet binary version
 
 ```
-wget https://github.com/likecoin/likecoin-chain/releases/download/v3.0.0/likecoin-chain_3.0.0_Linux_x86_64.tar.gz && \
+wget https://github.com/likecoin/likecoin-chain/releases/download/v3.0.0/likecoin-chain_3.1.1_Linux_x86_64.tar.gz && \
 tar -xvf likecoin-chain_3.1.1_Linux_x86_64.tar.gz && \
 chmod +x bin/liked && \
 mv bin/liked /usr/local/bin/ && \
